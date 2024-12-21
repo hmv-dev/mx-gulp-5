@@ -3,6 +3,7 @@ import gulpIf from 'gulp-if';
 import newer from 'gulp-newer';
 import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
+import imageminWebp from 'imagemin-webp';
 
 export const plugins = {
 	browserSync: browserSync,
@@ -10,4 +11,5 @@ export const plugins = {
 	notify: notify,
 	gulpIf: gulpIf,
 	newer: newer,
+  imageminWebp: imageminWebp,
 }
