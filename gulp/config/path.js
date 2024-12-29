@@ -12,18 +12,21 @@ export const path = {
 		html: `${buildFolder}/`,
 		js: `${buildFolder}/js/`,
 		images: `${buildFolder}/images/`,
+    fonts: `${buildFolder}/fonts/`
 	},
 	src: {
 		scss: `${srcFolder}/scss/style.scss`,
 		html: `${srcFolder}/**/*.html`,
 		js: `${srcFolder}/js/app.js`,
-		images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
+		images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp,ico}`,
 		svg: `${srcFolder}/images/**/*.svg`,
+    fonts: `${srcFolder}/fonts/*.ttf`
 	},
 	watch: {
 		scss: `${srcFolder}/scss/**/*.scss`,
 		html: `${srcFolder}/*.html`,
 		js: `${srcFolder}/js/**/*.js`,
 		images: `${srcFolder}/images/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
+    fonts: `${srcFolder}/fonts/**/*/.{woff,woff2,ttf,eot}`
 	}
 }

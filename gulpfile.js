@@ -17,6 +17,7 @@ import { images } from './gulp/tasks/images.js';
 import { js } from './gulp/tasks/js.js';
 import { reset } from './gulp/tasks/reset.js';
 import { scss } from './gulp/tasks/scss.js';
+import { fonts } from './gulp/tasks/fonts.js';
 import { server } from './gulp/tasks/server.js';
 
 // Наблюдатель за изменениями в файлах
@@ -25,10 +26,11 @@ function watcher() {
 	gulp.watch(path.watch.scss, scss);
 	gulp.watch(path.watch.js, js);
 	gulp.watch(path.watch.images, images);
+	gulp.watch(path.watch.fonts, fonts);
 }
 
 // Основные задачи
-const mainTask = gulp.series(gulp.parallel(html, scss, js, images));
+const mainTask = gulp.series(gulp.parallel(html, scss, js, images, fonts));
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTask, gulp.parallel(watcher, server));

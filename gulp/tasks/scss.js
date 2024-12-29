@@ -17,21 +17,21 @@ export const scss = () => {
 			})
 		))
 		.pipe(sass({
-			outputStyle: 'compressed',
-			silenceDeprecations: ['legacy-js-api'] // TODO этот параметр отключает предупреждение sass, но это временно
-		}))
-		.pipe(autoPrefixer({
-			grid: 'no-autoplace',
-			cascade: true,
-			overrideBrowserlist: ["last 3 versions", "> 1%", "not dead"], // TODO вместо этого свойства рекомендуют использовать package.json или файл конфига
-		}))
-		.pipe(myApp.plugins.gulpIf(
-			myApp.isBuild,
-			cleanCss()
-		))
-		.pipe(rename({
-			extname: '.min.css',
-		}))
-		.pipe(myApp.gulp.dest(myApp.path.build.css))
-		.pipe(myApp.plugins.browserSync.stream())
+      outputStyle: 'compressed',
+      silenceDeprecations: ['legacy-js-api'] // TODO этот параметр отключает предупреждение sass, но это временно
+    }))
+    // .pipe(myApp.plugins.gulpIf(
+    // 	myApp.isBuild,
+    // 	cleanCss()
+    // ))
+    .pipe(rename({
+      extname: '.css',
+    }))
+    .pipe(autoPrefixer({
+      grid: true,
+      cascade: true,
+      overrideBrowserslist: ["last 4 versions"],
+    }))
+  .pipe(myApp.gulp.dest(myApp.path.build.css))
+  .pipe(myApp.plugins.browserSync.stream())
 }
